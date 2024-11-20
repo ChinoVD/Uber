@@ -1,13 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>crear-cuenta</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">crear-cuenta</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="contenedor">
+    <div class="logo">
+      <!-- Aquí puedes agregar el logo si es necesario -->
+    </div>
+
+    <div class="iniciar_sesion">
+      <!-- Título de la página -->
+      <div class="titulo">
+        Registro
+      </div>
+
+      <!-- Campos de entrada para el usuario, contraseña y correo -->
+      <div class="registros">
+        <ion-input 
+          
+          fill="outline" 
+          label="Usuario"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Nombre de Usuario"
+          id="usuarioInput">
+        </ion-input> <!-- [(ngModel)]="nuevoUsuario" -->
+
+        <ion-input 
+          
+          fill="outline" 
+          label="Contraseña"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Contraseña"
+          id="passwordInput">
+        </ion-input> <!-- [(ngModel)]="nuevaPassword" -->
+
+        <ion-input 
+          
+          fill="outline" 
+          label="Reingrese Contraseña"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Reingrese su Contraseña"
+          id="v_passwordInput">
+        </ion-input> <!-- [(ngModel)]="v_nuevaPassword" -->
+
+        <!-- Nuevo campo de correo electrónico -->
+        <ion-input 
+          
+          fill="outline" 
+          label="Correo Electrónico"
+          labelPlacement="floating"
+          [clearInput]="true"
+          placeholder="Ingrese su Correo Electrónico"
+          id="emailInput">
+        </ion-input> <!-- [(ngModel)]="nuevoEmail" -->
+      </div>
+
+      <!-- Botón para registrar usuario -->
+      <ion-button >
+        Registrar
+      </ion-button> <!-- (click)="registrarUsuario()" -->
+
+    </div> <!-- Aquí cierra el div "iniciar_sesion" -->
+    
+  </div> <!-- Aquí cierra el div "contenedor" -->
 </ion-content>

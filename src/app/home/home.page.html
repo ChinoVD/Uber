@@ -2,7 +2,7 @@
   <div class="contenedor">
     <!-- Contenedor para los botones de selección -->
     <div class="botones">
-      <ion-segment [(ngModel)]="selector"  (ionChange)="onSegmentChange($event)">
+      <ion-segment [(ngModel)]="selector"  > <!-- (ionChange)="segmentChanged($event)" -->
         <!-- Segmento de selección para "Viajes" y "Delivery" -->
         <ion-segment-button value="viajes">
           <div>
@@ -58,7 +58,7 @@
         <div class="contenedor-uber-ahorro">
           <div class="scroll-horizontal">
 
-            <span *ngFor="let producto of productos">
+            <!-- <span *ngFor="let producto of productos">
               <div class="elemento"  *ngIf="producto.categoria == 'ahorro a diario'">
                 <ion-card>
                   <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
@@ -69,7 +69,7 @@
                   </ion-card-header>
                 </ion-card>
               </div>
-            </span>
+            </span> -->
           </div>
         </div>
       </div>
@@ -80,16 +80,16 @@
         <div class="contenido-uber-ahorro">
           <div class="contenedor-uber-ahorro">
             <div class="scroll-horizontal">
-              <span *ngFor="let producto of productos">
-              <div class="elemento"  *ngIf="producto.categoria == 'Viajes más simples'">
-                <ion-card>
+              <span > <!--  *ngFor="let producto of productos" -->
+              <div class="elemento"  > <!-- *ngIf="producto.categoria == 'viajes mas simples'" -->
+                <!-- <ion-card>
                   <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
                   <ion-card-header>
                     <ion-card-title>{{ producto.nombre }}</ion-card-title>
                     <ion-card-subtitle>{{ producto.detalle }}</ion-card-subtitle>
                     <ion-card-subtitle class="precio">${{ producto.precio }}</ion-card-subtitle>
                   </ion-card-header>
-                </ion-card>
+                </ion-card> -->
               </div>
             </span>
             </div>

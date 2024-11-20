@@ -1,22 +1,22 @@
 <ion-tabs>
 
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" href="/tabs/home">
+    <ion-tab-button tab="home" (click)="home()">
       <ion-icon aria-hidden="true" name="triangle"></ion-icon>
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="servicios" href="/tabs/servicios">
+    <ion-tab-button tab="servicios" (click)="servicios()">
       <ion-icon aria-hidden="true" name="ellipse"></ion-icon>
       <ion-label>Servicios</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="historial" href="/tabs/historial">
+    <ion-tab-button tab="historial" (click)="historial()">
       <ion-icon aria-hidden="true" name="square"></ion-icon>
       <ion-label>Actividad</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="cuenta" href="/tabs/cuenta">
+    <ion-tab-button tab="cuenta" (click)="cuenta()">
       <ion-icon aria-hidden="true" name="square"></ion-icon>
       <ion-label>Cuenta</ion-label>
     </ion-tab-button>

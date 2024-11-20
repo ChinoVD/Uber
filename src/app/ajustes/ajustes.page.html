@@ -1,13 +1,93 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>ajustes</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <div class="contenedor">
+    <div class="titulo">
+      <h1>Ajustes</h1>
+    </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">ajustes</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      <div class="contenido_principal">
+        <ion-button expand="block" >Abrir Configuración Cuenta</ion-button> <!--(click)="abrirConfiguracion()" -->
+
+        <ion-modal > <!-- [isOpen]="isOpen" -->
+          <ng-template>
+            <div class="tarjeta">
+              <h2 class="tarjeta-titulo">Información Personal</h2>
+              
+              <!-- Campo Nombre -->
+              <ion-item>
+                <ion-input
+                  label="Nombre"
+                  labelPlacement="stacked"
+                  type="text"
+                  placeholder="Ingrese su nombre"
+                  
+                ></ion-input> <!-- [(ngModel)]="nombre" -->
+              </ion-item>
+          
+              <!-- Campo Apellido -->
+              <ion-item>
+                <ion-input
+                  label="Apellido"
+                  labelPlacement="stacked"
+                  type="text"
+                  placeholder="Ingrese su apellido"
+                  
+                ></ion-input> <!-- [(ngModel)]="apellido" -->
+              </ion-item>
+          
+              <!-- Campo Correo -->
+              <ion-item>
+                <ion-input
+                  label="Correo Electrónico"
+                  labelPlacement="stacked"
+                  type="email"
+                  placeholder="Ingrese su email"
+                 
+                ></ion-input> <!-- [(ngModel)]="correo" -->
+              </ion-item>
+          
+              <!-- Campo Contraseña -->
+              <ion-item>
+                <ion-input
+                  label="Contraseña"
+                  labelPlacement="stacked"
+                  type="password"
+                  placeholder="Ingrese su contraseña"
+                  
+                ></ion-input> <!-- [(ngModel)]="contrasena" -->
+              </ion-item>
+          
+              <!-- Campo Dirección -->
+              <ion-item>
+                <ion-input
+                  label="Dirección"
+                  labelPlacement="stacked"
+                  type="text"
+                  placeholder="Ingrese su dirección"
+                  
+                ></ion-input> <!-- [(ngModel)]="direccion" -->
+              </ion-item>
+          
+              <!-- Campo Tarjeta de Crédito -->
+              <ion-item>
+                <ion-input
+                  label="Tarjeta de Crédito"
+                  labelPlacement="stacked"
+                  type="text"
+                  placeholder="Ingrese su tarjeta de crédito"
+                 
+                ></ion-input> <!-- [(ngModel)]="tarjeta" -->
+              </ion-item>
+
+              <!-- Botones para acciones -->
+              <ion-button expand="block">Guardar</ion-button>  <!--(click)="confirmar()" -->
+              <ion-button expand="block">Cancelar</ion-button> <!--(click)="cancelar()" -->
+          
+              <!-- Botón de Cerrar sesión -->
+              <ion-button expand="block">Cerrar sesión</ion-button> <!--(click)="cerrarSesion()" -->
+            </div>
+          </ng-template>
+        </ion-modal>
+      </div>
+    
+  </div>
 </ion-content>
