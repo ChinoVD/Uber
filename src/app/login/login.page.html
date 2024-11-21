@@ -11,38 +11,40 @@
 
       <div class="registros">
         <ion-input
-          
+          [(ngModel)]="usuario"
           fill="outline"
           label="Usuario"
           labelPlacement="floating"
           [clearInput]="true"
           placeholder="Ingrese su Usuario"
-          id="usuarioInput" > <!-- (blur)="animarError('usuarioInput')" --> <!-- [(ngModel)]="usuario" -->
+          (blur)="animarError('usuarioInput')"
+          id="usuarioInput">
         </ion-input>
 
         <ion-input
-          
+          [(ngModel)]="password"
           fill="outline"
           label="Contraseña"
           labelPlacement="floating"
           [clearInput]="true"
           placeholder="Ingrese su Contraseña"
-          id="passwordInput" > <!-- (blur)="animarError('passwordInput')" -->  <!-- [(ngModel)]="password" -->
+          (blur)="animarError('passwordInput')"
+          id="passwordInput">
         </ion-input>
       </div>
 
-      <ion-button  class="CC" fill="clear">
+      <ion-button class="CC" fill="clear" (click)="registro_usuario()">
         ¿No tienes una cuenta?
-      </ion-button> <!-- (click)="irRegistro()" -->
+      </ion-button>
 
-      <ion-button > <!-- (click)="ingresar()" -->
+      <ion-button (click)="login()">
         Ingresar
       </ion-button>
 
       <!-- Mostrar el botón de "Recuperar contraseña" después de 3 intentos -->
-      <ion-button  fill="clear">
+      <ion-button fill="clear" *ngIf="mostrarRecuperar" (click)="irRecuperarContrasena()">
         Recuperar Contraseña
-       </ion-button>
-    </div> <!--*ngIf="mostrarRecuperar" (click)="irRecuperarContrasena()" -->
+      </ion-button>
+    </div>
   </div>
 </ion-content>

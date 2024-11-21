@@ -13,7 +13,7 @@
       <!-- Campos de entrada para el usuario, contraseña y correo -->
       <div class="registros">
         <ion-input 
-          
+        [(ngModel)]="nuevoUsuario"
           fill="outline" 
           label="Usuario"
           labelPlacement="floating"
@@ -23,7 +23,7 @@
         </ion-input> <!-- [(ngModel)]="nuevoUsuario" -->
 
         <ion-input 
-          
+        [(ngModel)]="nuevaPassword"
           fill="outline" 
           label="Contraseña"
           labelPlacement="floating"
@@ -33,7 +33,7 @@
         </ion-input> <!-- [(ngModel)]="nuevaPassword" -->
 
         <ion-input 
-          
+          [(ngModel)]="v_password"
           fill="outline" 
           label="Reingrese Contraseña"
           labelPlacement="floating"
@@ -44,7 +44,7 @@
 
         <!-- Nuevo campo de correo electrónico -->
         <ion-input 
-          
+        [(ngModel)]="email"
           fill="outline" 
           label="Correo Electrónico"
           labelPlacement="floating"
@@ -55,7 +55,7 @@
       </div>
 
       <!-- Botón para registrar usuario -->
-      <ion-button >
+      <ion-button (click)="registrarUsuario()" >
         Registrar
       </ion-button> <!-- (click)="registrarUsuario()" -->
 
