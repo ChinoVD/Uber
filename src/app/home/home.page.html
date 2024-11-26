@@ -24,7 +24,7 @@
     <div *ngIf="selector === 'viajes'">
       <div class="contenido-sugerencias">
         <div class="barra-busqueda">
-          <ion-searchbar placeholder="¿A dónde vas?"></ion-searchbar>
+          <ion-searchbar placeholder="¿A dónde vas?" (ionFocus)="abrirMapa()"></ion-searchbar>
         </div>
 
         <p class="titulos">Sugerencias</p>
