@@ -1,15 +1,19 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Desactiva el desplazamiento */
+}
+
 .contenedor {
-    height: 100vh; 
-    background-image: url('/assets/img/background-uber-login.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    // position: absolute; //esto es lo que pone el profe cuando se cambia o se interpone una vista sobre otra
-    // top: 0;
-    // width: 100%;
-  }
+  height: 94vh; 
+  background-image: url('/assets/img/background-uber-login.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+}
   
   .iniciar_sesion {
     text-align: center; 
