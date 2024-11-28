@@ -1,6 +1,7 @@
 ion-content {
-    --background:#161616;
-  }
+    --background: #161616;
+}
+
 .contenedor {
     margin: 20px;
 }
@@ -17,17 +18,50 @@ h2, p {
     margin-bottom: 30px;
 }
 
+.inf-usuario h1 {
+    color: var(--color-letras-iconos);
+}
+
+/* ----------------------------------------------
+   Estilo para la sección de información del usuario
+---------------------------------------------- */
+.inf-usuario {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espaciado entre el texto y el ícono */
+  padding: 15px;
+  background-color: var(--fondo-secundario); /* Fondo secundario */
+  border-radius: 15px 10px; /* Bordes redondeados */
+  position: relative; /* Asegura que los hijos puedan posicionarse */
+  z-index: 1; /* Garantiza que este contenedor esté por encima */
+}
+
+/* Estilo del nombre del usuario */
+.inf-usuario h1 {
+  font-size: 2rem; /* Tamaño del texto */
+  color: var(--color-letras-iconos); /* Color del texto */
+  margin: 0; /* Eliminamos márgenes para un mejor ajuste */
+}
+
+/* Estilo del ícono */
 .usuario-img {
-    font-size: 3rem;
-    padding: 10px;
-    background-color: var(--color-letras-iconos);
-    border-radius: 50%;
+  width: 40px; /* Tamaño del ícono */
+  height: 40px;
+  cursor: pointer; /* Cambia el cursor a una mano */
+  z-index: 2; /* Asegura que esté por encima de otros elementos */
+  position: relative; /* Permite control de su posición */
+}
+
+/* Ajuste en caso de superposición con elementos cercanos */
+.inf-usuario .usuario-img:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
+  transition: transform 0.2s ease-in-out; /* Transición suave */
 }
 
 .opciones-usuario {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 10px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 30px;
 }
 
@@ -36,25 +70,30 @@ h2, p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: var(--fondo-secundario); 
+    background-color: var(--fondo-secundario);
     padding: 10px;
     border-radius: 8px;
 }
 
+.opciones-elementos h2 {
+    color: var(--color-letras-iconos);
+}
+
 .ayuda {
-    grid-column: 1; 
+    grid-column: 1;
 }
 
 .pago {
-    grid-column: 2; 
+    grid-column: 2;
 }
 
 .actividad {
-    grid-column: 3; 
+    grid-column: 3;
 }
 
 .icono-opciones {
     font-size: 2rem;
+    color: var(--color-letras-iconos);
 }
 
 .inf-adicional {
@@ -62,7 +101,11 @@ h2, p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
+}
+
+.inf-adicional h2, .inf-adicional p {
+    color: var(--color-letras-iconos);
 }
 
 .inf-elemento {
@@ -70,56 +113,41 @@ h2, p {
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    background-color: var(--fondo-secundario); 
+    background-color: var(--fondo-secundario);
     margin: 10px;
     padding: 10px;
-    border-radius: 15px; 
+    border-radius: 15px;
 }
 
 .icono-inf {
-    font-size: 4rem; 
-    width: 20%; 
-}
-
-.texto-inf {
-    width: 70%; 
-}
-
-.inf-usuario h1 {
-    color: var(--color-letras-iconos); 
-}
-
-.opciones-elementos h2 {
+    font-size: 4rem;
+    width: 20%;
     color: var(--color-letras-iconos);
 }
 
-.inf-adicional h2, .inf-adicional p {
-    color: var(--color-letras-iconos); 
-}
-
-.icono-opciones, .icono-inf {
-    color: var(--color-letras-iconos); 
+.texto-inf {
+    width: 70%;
 }
 
 .ajustes {
     width: 100%;
     background-color: var(--fondo-oscuro);
     color: var(--color-letras-iconos);
-    padding: 16px; 
-  
-    .ajustes-elementos {
-      display: flex;
-      justify-content: center; 
-      align-items: center;
-      background-color: var(--fondo-secundario);
-      padding: 8px;
-      border-radius: 8px; 
-  
-      ion-button {
-        --background: var(--fondo-terciario);
-        --color: var(--color-letras-iconos);
-        width: 100%;
-      }
-    }
-  }
-  
+    padding: 16px;
+}
+
+.ajustes .ajustes-elementos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--fondo-secundario);
+    padding: 8px;
+    border-radius: 8px;
+    margin:  0px 40px 0px 0px;
+}
+
+.ajustes .ajustes-elementos ion-button {
+    --background: var(--fondo-terciario);
+    --color: var(--color-letras-iconos);
+    width: 100%;
+}

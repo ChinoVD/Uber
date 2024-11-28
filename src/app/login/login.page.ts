@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
       this.intentosFallidos = 0;
       this.mostrarRecuperar = false;
       this.mostrarAlerta(`Bienvenido, ${this.usuario}!`, () => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/tabs/home'],{ replaceUrl: true });
       });
     } else {
       this.intentosFallidos++;
@@ -60,7 +60,7 @@ export class LoginPage implements OnInit {
   }
 
   irRecuperarContrasena() {
-    this.router.navigate(['/recuperar-contra']);
+    this.router.navigate(['/recuperar-password'],{ replaceUrl: true });
   }
 
   async mostrarAlerta(text: string, accion?: () => void) {
@@ -95,6 +95,6 @@ export class LoginPage implements OnInit {
   }
 
   registro_usuario() {
-    this.router.navigate(['/crear-cuenta'], {replaceUrl: true});
+    this.router.navigate(['/crear-cuenta'],{replaceUrl: true});
   }
 }

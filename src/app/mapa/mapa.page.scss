@@ -1,62 +1,138 @@
 #map {
-    width: 100%;
-    height: 100vh;
-    z-index: 100;
-  }
-  
-  #input {
-    position: absolute;
-    bottom: calc(5rem + 10px);
-    z-index: 100;
-    width: 80%;
-    left: 10%;
-    height: 3rem;
-    border-radius: 10px;
-    background-color: #ffffff85;
-    border: 1px #cbcbcb solid;
-    padding: 0px 10px;
-  }
-  
-  #rutas {
-    position: absolute;
-    bottom: 9rem;
-    left: 10%;
-    width: 80%;
-    height: fit-content;
-    z-index: 100;
-    background-color: #ffffffc7;
-    border-radius: 10px;
-    padding: 10px;
-  }
-  
-  .ruta {
-    height: 2.4rem;
-    border-bottom: 1px #e3e3e3 solid;
-    line-height: 2.4rem;
-  }
-  
-  .ruta:last-child{
-    border-bottom: none;
-  }
-  
-  #info-viaje{
-    position: absolute;
-    top: 0;
-    height: 3rem;
-    z-index: 101;
-    background-color: #ffffffc7;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    width: 100%;
-    font-weight: bold;
-  }
-  #info-viaje div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 5px;
-  }
-  #info-viaje div ion-icon{
-    font-size: 2rem;
-  }
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+}
+
+#input-start,
+#input-end {
+  position: absolute;
+  top: calc(3rem + 10px);
+  z-index: 101;
+  width: 80%;
+  left: 8%;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: #ffffff85;
+  border: 1px #cbcbcb solid;
+  padding: 0px 10px;
+}
+
+#input-end {
+  top: calc(6.5rem + 10px);
+}
+
+#rutas {
+  position: absolute;
+  top: calc(10rem + 10px);
+  left: 10%;
+  width: 80%;
+  height: fit-content;
+  z-index: 101;
+  background-color: #ffffffc7;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.ruta {
+  height: 2.4rem;
+  border-bottom: 1px #e3e3e3 solid;
+  line-height: 2.4rem;
+}
+
+.ruta:last-child {
+  border-bottom: none;
+}
+
+#info-viaje {
+  position: absolute;
+  top: 0;
+  height: 3rem;
+  z-index: 102;
+  background-color: #ffffffc7;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  width: 100%;
+  font-weight: bold;
+}
+
+#info-viaje div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+
+#info-viaje div ion-icon {
+  font-size: 2rem;
+}
+
+#input-start {
+  top: calc(4rem + 10px);
+}
+
+#input-end {
+  top: calc(7.5rem + 10px);
+}
+
+#info-viaje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffffc7;
+  font-weight: bold;
+}
+
+#info-viaje div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#info-viaje div ion-icon {
+  font-size: 1.5rem;
+}
+
+#info-viaje .precio {
+  color: green;
+}
+
+/* Asegurando que el botón sea visible y no esté cubierto */
+ion-button {
+  position: fixed;
+  bottom: 20px; /* Espaciado desde la parte inferior */
+  left: 10%;
+  width: 80%; /* Ocupa el 80% del ancho */
+  z-index: 105; /* Asegura que el botón esté por encima del mapa */
+  margin-top: 10px; /* Opcional: separación entre el mapa y el botón */
+}
+
+.Aceptar {
+  background-color: #007bff; /* Azul estándar */
+}
+
+/* Estilos para la lista de información */
+#info-viaje {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.info-item ion-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.info-item span {
+  font-size: 1rem;
+  color: #333;
+}

@@ -1,1 +1,13 @@
+ion-tab-bar, ion-tab-button {
+    background-color: var(--fondo-oscuro);
+    border-top: 1px solid #666666; /* Línea blanca en la parte superior */
+}
 
+ion-icon {
+    font-size: 2rem;
+    color: #d7d8da;
+}
+
+ion-label {
+    color: #d7d8da;
+}

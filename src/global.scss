@@ -1,18 +1,138 @@
-// Tipografia de Uber
+// Tipografía de Uber
+@font-face {
+  font-family: 'UberMoveBold';
+  src: url('assets/font-family/UberMoveBold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'UberMoveBold';
-    src: url('/assets/fonts/UberMoveBold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'UberMoveMedium';
-    src: url('/assets/fonts/UberMoveMedium.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
- 
-  
+  font-family: 'UberMoveMedium';
+  src: url('assets/font-family/UberMoveMedium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.volverAtras{
+  background-color: var(--color-letras-iconos);
+}
+
+
+/* ----------------------------------------------
+   Estilos para el modal
+---------------------------------------------- */
+ion-modal {
+  --width: 100%; /* Ajusta el ancho del modal */
+  --height: auto; /* Altura adaptable al contenido */
+  --border-radius: 20px; /* Esquinas redondeadas */
+  --background: var(--fondo-oscuro); /* Fondo del modal */
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto flotante */
+  --backdrop-opacity: 0.8; /* Opacidad del fondo detrás del modal */
+}
+
+/* ----------------------------------------------
+   Contenido dentro del modal
+---------------------------------------------- */
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: var(--fondo-oscuro); /* Fondo de la tarjeta */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+}
+
+/* Estilo del título de la tarjeta */
+.tarjeta-titulo {
+  font-family: 'UberMoveBold', sans-serif; /* Fuente personalizada */
+  font-size: 1.2rem; /* Tamaño de fuente */
+  color: var(--color-letras-iconos); /* Color del texto */
+  margin-bottom: 20px; /* Espaciado inferior */
+  text-align: center; /* Centrado del título */
+}
+
+/* Estilo de los elementos del formulario */
+ion-item {
+  --background: var(--color-letras-iconos); /* Fondo oscuro para los ítems */
+  margin: 10px 0; /* Espaciado entre ítems */
+  border-radius: 5px; /* Esquinas redondeadas */
+}
+
+ion-input {
+  font-family: 'UberMoveMedium', sans-serif; /* Fuente personalizada */
+  color: var(--color-letras-iconos); /* Color del texto */
+}
+
+/* Estilo del input nativo */
+ion-input::part(native) {
+  background-color: var(--fondo-secundario); /* Fondo del input */
+  border-radius: 5px; /* Esquinas redondeadas */
+}
+
+/* Estilo de los botones dentro del modal */
+ion-modal.modal-ajustes ion-button {
+  font-family: 'UberMoveMedium', sans-serif; /* Fuente personalizada */
+  background-color: var(--fondo-terciario); /* Fondo de los botones */
+  color: var(--color-letras-iconos); /* Color del texto */
+  border-radius: 20px; /* Botones redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  margin: 10px 0; /* Espaciado entre botones */
+}
+
+
+/* ----------------------------------------------
+   Estilo del contenedor principal
+---------------------------------------------- */
+ion-content {
+  --background: var(--fondo-oscuro); /* Fondo principal */
+}
+.contenedor {
+  background-color: var(--fondo-oscuro); /* Fondo principal */
+  color: var(--color-letras-iconos); /* Color del texto */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar un efecto flotante */
+}
+
+/* ----------------------------------------------
+   Estilo del título
+---------------------------------------------- */
+.titulo h1 {
+  font-family: 'UberMoveBold', sans-serif; /* Fuente personalizada */
+  font-size: 1.5rem; /* Tamaño del texto */
+  text-align: center; /* Centrado */
+  color: var(--color-letras-iconos); /* Color del texto */
+  background-color: var(--fondo-secundario); /* Fondo secundario */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 20px; /* Separación inferior */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+}
+
+/* ----------------------------------------------
+   Estilo del contenido ajustes
+---------------------------------------------- */
+.contenido_principal {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre elementos */
+}
+
+/* Estilo del botón dentro del contenido principal */
+.contenido_principal ion-button {
+  font-family: 'UberMoveMedium', sans-serif; /* Fuente personalizada */
+  background-color: var(--fondo-terciario); /* Fondo del botón */
+  color: var(--color-letras-iconos); /* Color del texto */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 12px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transición para hover */
+}
+
+.contenido_principal ion-button:hover {
+  transform: scale(1.05); /* Ampliación ligera en hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+

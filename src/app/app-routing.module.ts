@@ -27,6 +27,18 @@ const routes: Routes = [
   },  {
     path: 'mapa',
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
+  {
+    path: 'espera-conductor',
+    loadChildren: () => import('./espera-conductor/espera-conductor.module').then( m => m.EsperaConductorPageModule)
+  },
+  {
+    path: 'en-desarrollo',
+    loadChildren: () => import('./en-desarrollo/en-desarrollo.module').then( m => m.EnDesarrolloPageModule)
+  },
+  {
+    path: 'recuperar-password',
+    loadChildren: () => import('./recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
   }
 
 ];

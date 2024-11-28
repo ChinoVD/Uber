@@ -1,0 +1,17 @@
+<ion-content class="ion-padding">
+  <div class="contenedor">
+    <ion-card class="estado-viaje-card">
+      <ion-card-header>
+        <h1>Estado del Viaje</h1>
+      </ion-card-header>
+      <ion-card-content class="contenido-viaje">
+        <p>{{ mensaje }}</p>
+        <!-- Botón para volver y desactivar cupones -->
+        <ion-button class="boton-volver" (click)="volver(); descontarViaje()">Volver</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!-- <img class="img" src="assets/img/ciudad.png" alt=""> -->
+  <ion-icon class="auto" id="auto" src="assets/icon/taxi.svg" (click)="mostrarImagen()"></ion-icon>
+</ion-content>

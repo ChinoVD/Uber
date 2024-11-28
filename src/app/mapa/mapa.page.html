@@ -1,20 +1,53 @@
 <ion-content [fullscreen]="true">
   <div id="contenedor">
-    <div id="info-viaje">
-      <div class="distancia">
+    <!-- Información del viaje en lista -->
+    <ul id="info-viaje">
+      <li class="info-item">
         <ion-icon name="analytics"></ion-icon>
-        {{distancia}}
-      </div>
-      <div class="tiempo">
+        <span>Distancia: {{ distancia }}</span>
+      </li>
+      <li class="info-item">
+        <ion-icon name="wallet"></ion-icon>
+        <span>Gasto Total: {{ formatoPrecio(precio) }}</span>
+      </li>
+      <li class="info-item">
         <ion-icon name="time"></ion-icon>
-        {{duracion}}
-      </div>
-    </div>
+        <span>Tiempo Estimado: {{ formatoTiempo(duracion) }}</span>
+      </li>
+    </ul>
+    
+    <!-- Mapa y demás contenido aquí -->
     <div #map id="map"></div>
-    <input type="text" [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino" id="input">
+    <input
+      type="text"
+      [(ngModel)]="start"
+      (input)="updateSearchResults('start')"
+      placeholder="Origen"
+      id="input-start"
+    />
+    <input
+      type="text"
+      [(ngModel)]="end"
+      (input)="updateSearchResults('end')"
+      placeholder="Destino"
+      id="input-end"
+    />
+
+    <!-- Resultados de autocompletado -->
     <div id="rutas" *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
-      <div class="ruta" *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+      <div
+        class="ruta"
+        *ngFor="let item of autocompleteItems"
+        tappable
+        (click)="selectSearchResult(item)"
+      >
         {{ item.description }}
       </div>
     </div>
   </div>
+
+  <!-- Botón Aceptar -->
+  <ion-button expand="full" class="Aceptar" (click)="mostrarDetalles()" (click)="finalizarViaje()">
+    Aceptar
+  </ion-button>
+</ion-content>

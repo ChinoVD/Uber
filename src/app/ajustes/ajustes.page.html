@@ -1,93 +1,98 @@
 <ion-content class="ion-padding">
+  <!-- Botón para volver atrás con icono de flecha -->
+  <ion-button fill="clear" (click)="salir()" class="volverAtras">
+    <ion-icon name="arrow-back" slot="start"></ion-icon> <!-- Icono de flecha hacia atrás -->
+    Salir
+  </ion-button>
+
   <div class="contenedor">
     <div class="titulo">
       <h1>Ajustes</h1>
     </div>
 
-      <div class="contenido_principal">
-        <ion-button expand="block" >Abrir Configuración Cuenta</ion-button> <!--(click)="abrirConfiguracion()" -->
+    <div class="contenido_principal">
+      <ion-button expand="block" (click)="setOpen(true)">Abrir Configuración Cuenta</ion-button>
 
-        <ion-modal > <!-- [isOpen]="isOpen" -->
-          <ng-template>
-            <div class="tarjeta">
-              <h2 class="tarjeta-titulo">Información Personal</h2>
-              
-              <!-- Campo Nombre -->
-              <ion-item>
-                <ion-input
-                  label="Nombre"
-                  labelPlacement="stacked"
-                  type="text"
-                  placeholder="Ingrese su nombre"
-                  
-                ></ion-input> <!-- [(ngModel)]="nombre" -->
-              </ion-item>
-          
-              <!-- Campo Apellido -->
-              <ion-item>
-                <ion-input
-                  label="Apellido"
-                  labelPlacement="stacked"
-                  type="text"
-                  placeholder="Ingrese su apellido"
-                  
-                ></ion-input> <!-- [(ngModel)]="apellido" -->
-              </ion-item>
-          
-              <!-- Campo Correo -->
-              <ion-item>
-                <ion-input
-                  label="Correo Electrónico"
-                  labelPlacement="stacked"
-                  type="email"
-                  placeholder="Ingrese su email"
-                 
-                ></ion-input> <!-- [(ngModel)]="correo" -->
-              </ion-item>
-          
-              <!-- Campo Contraseña -->
-              <ion-item>
-                <ion-input
-                  label="Contraseña"
-                  labelPlacement="stacked"
-                  type="password"
-                  placeholder="Ingrese su contraseña"
-                  
-                ></ion-input> <!-- [(ngModel)]="contrasena" -->
-              </ion-item>
-          
-              <!-- Campo Dirección -->
-              <ion-item>
-                <ion-input
-                  label="Dirección"
-                  labelPlacement="stacked"
-                  type="text"
-                  placeholder="Ingrese su dirección"
-                  
-                ></ion-input> <!-- [(ngModel)]="direccion" -->
-              </ion-item>
-          
-              <!-- Campo Tarjeta de Crédito -->
-              <ion-item>
-                <ion-input
-                  label="Tarjeta de Crédito"
-                  labelPlacement="stacked"
-                  type="text"
-                  placeholder="Ingrese su tarjeta de crédito"
-                 
-                ></ion-input> <!-- [(ngModel)]="tarjeta" -->
-              </ion-item>
+      <ion-modal class="modal-ajustes" [isOpen]="isModalOpen">
+        <ng-template>
+          <div class="tarjeta">
+            <h2 class="tarjeta-titulo">Información Personal</h2>
 
-              <!-- Botones para acciones -->
-              <ion-button expand="block">Guardar</ion-button>  <!--(click)="confirmar()" -->
-              <ion-button expand="block">Cancelar</ion-button> <!--(click)="cancelar()" -->
-          
-              <!-- Botón de Cerrar sesión -->
-              <ion-button expand="block">Cerrar sesión</ion-button> <!--(click)="cerrarSesion()" -->
-            </div>
-          </ng-template>
-        </ion-modal>
-      </div>
-    
+            <!-- Campo Nombre -->
+            <ion-item>
+              <ion-input
+                label="Nombre"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Ingrese su nombre"
+                [(ngModel)]="nombre"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Campo Apellido -->
+            <ion-item>
+              <ion-input
+                label="Apellido"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Ingrese su apellido"
+                [(ngModel)]="apellido"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Campo Correo -->
+            <ion-item>
+              <ion-input
+                label="Correo Electrónico"
+                labelPlacement="stacked"
+                type="email"
+                placeholder="Ingrese su email"
+                [(ngModel)]="email"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Campo Contraseña -->
+            <ion-item>
+              <ion-input
+                label="Contraseña"
+                labelPlacement="stacked"
+                type="password"
+                placeholder="Ingrese su contraseña"
+                [(ngModel)]="password"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Campo Dirección -->
+            <ion-item>
+              <ion-input
+                label="Dirección"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Ingrese su dirección"
+                [(ngModel)]="direccion"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Campo Tarjeta de Crédito -->
+            <ion-item>
+              <ion-input
+                label="Tarjeta de Crédito"
+                labelPlacement="stacked"
+                type="text"
+                placeholder="Ingrese su tarjeta de crédito"
+                [(ngModel)]="tarjeta"
+              ></ion-input>
+            </ion-item>
+
+            <!-- Botones para acciones -->
+            <ion-button expand="block" (click)="confirmar()">Guardar</ion-button>
+            <ion-button expand="block" (click)="cancel()">Cancelar</ion-button>
+
+            <!-- Botón de Cerrar sesión -->
+            <ion-button expand="block" (click)="cerrarSesion()">Cerrar sesión</ion-button>
+          </div>
+        </ng-template>
+      </ion-modal>
+    </div>
   </div>
 </ion-content>
