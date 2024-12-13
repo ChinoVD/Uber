@@ -12,7 +12,7 @@ declare var google: any;
 export class MapaPage {
   @ViewChild('map', { static: false }) mapElement: ElementRef | undefined;
   public map: any;
-  public start: string = ''; // Campo de origen
+  public start: string = 'Duoc UC: Sede Melipilla - Serrano, Melipilla, Chile'; // Campo de origen
   public end: string = ''; // Campo de destino
   public directionsService: any;
   public directionsDisplay: any;
@@ -35,7 +35,7 @@ export class MapaPage {
 
   ionViewDidEnter() {
     this.platform.ready().then(() => {
-      this.setCurrentLocation(); // Establecer la ubicación actual como origen
+     
       this.initMap();
     });
   }
@@ -43,34 +43,7 @@ export class MapaPage {
   /**
    * Establece la ubicación actual del usuario y la convierte a una dirección.
    */
-  setCurrentLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-
-          const geocoder = new google.maps.Geocoder();
-          const latlng = { lat, lng };
-
-          geocoder.geocode({ location: latlng }, (results: any, status: string) => {
-            if (status === 'OK' && results[0]) {
-              this.zone.run(() => {
-                this.start = results[0].formatted_address; // Dirección legible
-              });
-            } else {
-              console.error('Error obteniendo la dirección: ', status);
-            }
-          });
-        },
-        (error) => {
-          console.error('Error obteniendo la ubicación: ', error);
-        }
-      );
-    } else {
-      console.error('Geolocalización no está soportada en este navegador.');
-    }
-  }
+  
 
   /**
    * Inicializa el mapa.

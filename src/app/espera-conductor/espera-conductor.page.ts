@@ -33,17 +33,7 @@ export class EsperaConductorPage implements OnInit {
     this.navCtrl.back();
   }
 
-  descontarViaje() {
-    let viajesGratis = JSON.parse(localStorage.getItem('viajesGratis') || '0');
-    
-    if (viajesGratis >= 3) {
-      localStorage.setItem('precioPorKilometro', '300');
-    } else {
-      viajesGratis += 1;
-      localStorage.setItem('viajesGratis', JSON.stringify(viajesGratis));
-      
-    }
-  }
+ 
 
   mostrarImagen() {
     this.imagenVisible = true;

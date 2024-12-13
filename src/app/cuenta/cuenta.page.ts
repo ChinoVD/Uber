@@ -38,17 +38,17 @@ export class CuentaPage implements OnInit {
     this.routing.navigate(['/ajustes'], { replaceUrl: true });
   }
 
-  activarCupon() {
-    let viajesGratis = JSON.parse(localStorage.getItem('viajesGratis') || '0');
+  // activarCupon() {
+  //   let viajesGratis = JSON.parse(localStorage.getItem('viajesGratis') || '0');
 
-    if (viajesGratis < 3) {
-      viajesGratis += 1;
-      localStorage.setItem('viajesGratis', JSON.stringify(viajesGratis));
-      localStorage.setItem('precioPorKilometro', '0');
+  //   if (viajesGratis < 3) {
+  //     viajesGratis += 1;
+  //     localStorage.setItem('viajesGratis', JSON.stringify(viajesGratis));
+  //     localStorage.setItem('precioPorKilometro', '0');
 
-      alert(`¡Disfruta de tu ${viajesGratis}° viaje gratis!`);
-    }
-  }
+  //     alert(`¡Disfruta de tu ${viajesGratis}° viaje gratis!`);
+  //   }
+  // }
 
   irHistorial() {
     this.routing.navigate(['/tabs/historial'], { replaceUrl: true });
