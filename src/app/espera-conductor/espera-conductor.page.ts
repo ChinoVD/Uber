@@ -41,7 +41,7 @@ export class EsperaConductorPage implements OnInit {
     } else {
       viajesGratis += 1;
       localStorage.setItem('viajesGratis', JSON.stringify(viajesGratis));
-      localStorage.setItem('precioPorKilometro', '0');
+      
     }
   }
 

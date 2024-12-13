@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CuentaPage implements OnInit {
   nombre: string = '';
+  viajesGratis: number = -1;
 
   constructor(private routing: Router) {}
 
@@ -57,4 +58,7 @@ export class CuentaPage implements OnInit {
     this.routing.navigate(['/ajustes'], { replaceUrl: true });
   }
 
+  redirigirEnDesarrollo() {
+    this.routing.navigate(['/en-desarrollo']);
+  }
 }

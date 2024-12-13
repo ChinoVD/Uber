@@ -16,7 +16,7 @@ export class MapaPage {
   public end: string = ''; // Campo de destino
   public directionsService: any;
   public directionsDisplay: any;
-  precio: number = 300; // Almacena el precio calculado
+  precio: number = 0; // Precio del viaje
   carrito: any[] = [];
   input = '';
   autocompleteItems: any[] = [];
@@ -30,6 +30,8 @@ export class MapaPage {
     private alerta: AlertController,
     private router: Router
   ) {}
+
+  
 
   ionViewDidEnter() {
     this.platform.ready().then(() => {
@@ -176,7 +178,8 @@ export class MapaPage {
    * @returns Precio calculado.
    */
   calcularPrecio(distanciaKm: number): number {
-    const precioPorKilometro = 300; // Precio por kilómetro
+    // Recuperar el precio por kilómetro desde el localStorage
+    const precioPorKilometro = parseFloat(localStorage.getItem('precioPorKilometro') || '0'); // Convierte la cadena a número
     return distanciaKm * precioPorKilometro;
   }
 

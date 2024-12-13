@@ -18,6 +18,8 @@ export class HomePage implements OnInit {
   ngOnInit(): void {
     // Obtener productos iniciales al cargar la página
     this.obtenerProductos(this.selector);
+    // Obtener productos iniciales al cargar la página
+    localStorage.setItem('precioPorKilometro', '300');
   }
 
   /**
